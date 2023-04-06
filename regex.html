@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script type="text/javascript">
+		function validate(){
+			var username=document.getElementById("username").value
+			var mobile=document.getElementById("mobile").value
+			var email=document.getElementById("email").value
+			var usernameCheck=/^[a-zA-Z .]+$/
+			var mobileCheck=/^[6-9][0-9]{9}$/
+			var emailCheck=/^[a-zA-Z0-9.]+@[a-z]+\.[a-z]{2,3}$/
+			/*console.log(username)*/
+			if(username=="" || username.length<3){
+				alert("check username field once")
+				return false
+			}
+			if(!username.match(usernameCheck)){
+				alert("Name must carry only characters")
+				return false
+			}
+			if(!mobile.match(mobileCheck)){
+				alert("check your mobile number")
+				return false
+			}
+			if(email==""){
+				alert("check your email field once")
+				return false
+			}
+			if(!email.match(emailCheck)){
+				alert("Email is invalid format")
+				return false
+			}
+			return true
+		}
+	</script>
+</head>
+<body>
+	<form onsubmit="return validate()" action="https://www.google.com">
+		<p><input id="username" placeholder="Enter username"/></p>
+		<p><input id="mobile" placeholder="Enter your mobile number" /></p>
+		<p><input id="email" placeholder="enter yoiur email id" /></p>
+		<button>Submit</button>
+	</form>
+</body>
+</html>
